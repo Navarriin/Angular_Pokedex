@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+@use "./config-scss/reset.scss";
+@use "./config-scss/variables.scss";
+@use "./config-scss/rem-calc.scss";
+
+main {
+  box-sizing: border-box;
+  max-width: rem-calc(600);
+  margin: 0 auto;
+}
+
+html {
+  background-color: var(--primary);
+  font-family: "Segoe UI", sans-serif;
+}
