@@ -1,0 +1,19 @@
+@import "../../../config-scss/rem-calc.scss";
+
+:host {
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: rem-calc(40) 0;
+
+    p {
+      color: var(--branco);
+      font-style: italic;
+      font-size: rem-calc(32);
+      font-weight: 900;
+      margin-left: rem-calc(6);
+    }
+  }
+}
