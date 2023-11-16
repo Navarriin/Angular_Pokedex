@@ -7,7 +7,11 @@ import { PokeApiService } from 'src/app/service/poke-api.service';
   styleUrls: ['./poke-list.component.scss'],
 })
 export class PokeListComponent {
+  public getAllPokemons: any;
   constructor(private pokeApi: PokeApiService) {
-    this.pokeApi.pegarPokemon.subscribe((res) => console.log(res));
+    this.pokeApi.pegarPokemon.subscribe((res) => {
+      this.getAllPokemons = res.results;
+      console.log(this.getAllPokemons);
+    });
   }
 }
