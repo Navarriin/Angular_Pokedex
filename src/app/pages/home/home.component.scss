@@ -1,10 +1,20 @@
-@media screen and (min-width: 660px) {
+@import "../../../config-scss/rem-calc.scss";
+@media screen and (min-width: rem-calc(660)) {
   :host {
     .header {
       display: flex;
       flex-direction: row;
       justify-content: space-around;
       align-items: center;
+    }
+  }
+}
+
+@media screen and (min-width: rem-calc(1440)) {
+  :host {
+    .header {
+      justify-content: space-between;
+      margin: 0 rem-calc(170);
     }
   }
 }

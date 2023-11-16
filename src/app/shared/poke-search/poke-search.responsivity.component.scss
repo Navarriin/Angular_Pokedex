@@ -1,0 +1,6 @@
+@import "../../../config-scss/rem-calc.scss";
+@media screen and (min-width: rem-calc(1024)) {
+  :host {
+    width: rem-calc(600);
+  }
+}
