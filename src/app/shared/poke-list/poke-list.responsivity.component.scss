@@ -1,0 +1,28 @@
+@import "../../../config-scss/rem-calc.scss";
+
+@media screen and (min-width: rem-calc(660)) {
+  :host {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    margin: auto;
+
+    .pokemon {
+      width: 42%;
+    }
+  }
+}
+
+@media screen and (min-width: rem-calc(1440)) {
+  :host {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    margin: auto;
+
+    .pokemon {
+      width: 82%;
+    }
+  }
+}

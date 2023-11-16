@@ -4,7 +4,10 @@ import { PokeApiService } from 'src/app/service/poke-api.service';
 @Component({
   selector: 'poke-list',
   templateUrl: './poke-list.component.html',
-  styleUrls: ['./poke-list.component.scss'],
+  styleUrls: [
+    './poke-list.component.scss',
+    './poke-list.responsivity.component.scss',
+  ],
 })
 export class PokeListComponent {
   public getAllPokemons: any;
