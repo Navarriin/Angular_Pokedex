@@ -1,5 +1,4 @@
-import { Component, HostListener } from '@angular/core';
-import { MinLengthValidator } from '@angular/forms';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'poke-search',
@@ -9,4 +8,12 @@ import { MinLengthValidator } from '@angular/forms';
     './poke-search.responsivity.component.scss',
   ],
 })
-export class PokeSearchComponent {}
+export class PokeSearchComponent {
+  @Output() public emmitSearch: EventEmitter<string> = new EventEmitter();
+
+  constructor() {}
+
+  public search(value: string) {
+    this.emmitSearch.emit(value);
+  }
+}
