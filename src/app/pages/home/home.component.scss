@@ -1,1 +1,10 @@
-
+@media screen and (min-width: 660px) {
+  :host {
+    .header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
+}

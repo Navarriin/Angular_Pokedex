@@ -5,9 +5,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: rem-calc(10);
+
+    width: 80%;
+    margin: auto;
+    margin-bottom: rem-calc(10);
     padding: rem-calc(12) rem-calc(15);
 
+    border-radius: rem-calc(10);
     background-color: rgba(255, 255, 255, 0.2);
 
     img {
