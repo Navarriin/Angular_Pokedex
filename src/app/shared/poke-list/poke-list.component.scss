@@ -19,7 +19,12 @@ $rem: rem-calc(20);
 
     border-radius: rem-calc(10);
     background-color: var(--branco);
+
     text-transform: capitalize;
+    text-decoration: none;
+    color: var(--primary);
+
+    transition: transform 0.1s ease;
 
     &__status {
       h2 {
@@ -64,5 +69,9 @@ $rem: rem-calc(20);
         width: rem-calc(70);
       }
     }
+  }
+
+  .pokemon:hover {
+    transform: scale(1.01);
   }
 }
