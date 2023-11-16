@@ -1,20 +1,38 @@
 @import "../../../config-scss/rem-calc.scss";
+
+$radius: rem-calc(8);
+:host {
+  #header {
+    background-color: black;
+    padding: rem-calc(5);
+    border-radius: 0 0 $radius $radius;
+  }
+}
+
 @media screen and (min-width: rem-calc(660)) {
   :host {
-    .header {
+    #header {
       display: flex;
       flex-direction: row;
       justify-content: space-around;
       align-items: center;
+    }
+
+    .fixo {
+      position: fixed;
+      z-index: 1000;
+
+      width: 100vw;
+      opacity: 0.97;
     }
   }
 }
 
 @media screen and (min-width: rem-calc(1440)) {
   :host {
-    .header {
-      justify-content: space-between;
-      margin: 0 rem-calc(170);
+    #header {
+      justify-content: space-around;
+      gap: rem-calc(400);
     }
   }
 }

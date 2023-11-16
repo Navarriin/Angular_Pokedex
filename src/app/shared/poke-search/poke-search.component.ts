@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import { MinLengthValidator } from '@angular/forms';
 
 @Component({
   selector: 'poke-search',
@@ -8,4 +9,15 @@ import { Component } from '@angular/core';
     './poke-search.responsivity.component.scss',
   ],
 })
-export class PokeSearchComponent {}
+export class PokeSearchComponent {
+  fixo: boolean = false;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    if (window.scrollY >= 120) {
+      this.fixo = true;
+    } else {
+      this.fixo = false;
+    }
+  }
+}

@@ -13,15 +13,5 @@ html {
 }
 
 body::-webkit-scrollbar {
-  width: rem-calc(8);
-}
-
-body::-webkit-scrollbar-track {
-  background: var(--primary);
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: var(--primary);
-  border-radius: rem-calc(10);
-  border: 2px solid var(--secondary);
+  width: rem-calc(0);
 }
