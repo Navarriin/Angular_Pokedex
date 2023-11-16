@@ -4,11 +4,24 @@
 
 main {
   box-sizing: border-box;
-  width: rem-calc(600);
-  margin: 0 auto;
+  width: 100%;
 }
 
 html {
   background-color: var(--primary);
   font-family: "Segoe UI", sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: rem-calc(8);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--primary);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: rem-calc(10);
+  border: 2px solid var(--secondary);
 }
