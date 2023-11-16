@@ -10,6 +10,10 @@ $rem: rem-calc(20);
   margin-right: rem-calc(27);
   padding: $rem 0;
 
+  .search {
+    margin-bottom: rem-calc(10);
+  }
+
   .pokemon {
     position: relative;
     display: flex;

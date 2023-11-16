@@ -2,27 +2,41 @@
 
 @media screen and (min-width: rem-calc(660)) {
   :host {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    .section__main {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
 
-    margin: auto;
+      margin: auto;
 
-    .pokemon {
-      width: 42%;
+      .pokemon {
+        width: 42%;
+      }
+    }
+  }
+}
+@media screen and (min-width: rem-calc(1020)) {
+  :host {
+    .search {
+      width: 90%;
+      margin: rem-calc(15) auto;
     }
   }
 }
 
 @media screen and (min-width: rem-calc(1440)) {
   :host {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    .section__main {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
 
-    margin: auto;
-
+      margin: auto;
+      gap: 1rem;
+    }
     .pokemon {
-      width: 85%;
+      min-width: rem-calc(400);
+      width: 80%;
     }
   }
 }

@@ -9,15 +9,4 @@ import { MinLengthValidator } from '@angular/forms';
     './poke-search.responsivity.component.scss',
   ],
 })
-export class PokeSearchComponent {
-  fixo: boolean = false;
-
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    if (window.scrollY >= 120) {
-      this.fixo = true;
-    } else {
-      this.fixo = false;
-    }
-  }
-}
+export class PokeSearchComponent {}
