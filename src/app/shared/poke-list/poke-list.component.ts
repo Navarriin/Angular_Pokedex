@@ -13,7 +13,9 @@ export class PokeListComponent {
   private setAllPokemons: any;
   protected getAllPokemons: any;
 
-  constructor(private pokeApi: PokeApiService) {
+  constructor(private pokeApi: PokeApiService) {}
+
+  ngOnInit() {
     this.pokeApi.pegarPokemon().subscribe((res) => {
       this.setAllPokemons = res.results;
       this.getAllPokemons = this.setAllPokemons;
