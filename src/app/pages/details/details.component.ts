@@ -37,7 +37,7 @@ export class DetailsComponent {
         this.pokemon = res;
         this.isLoading = true;
       },
-      (error) => {
+      (_error) => {
         this.error = true;
       }
     );
