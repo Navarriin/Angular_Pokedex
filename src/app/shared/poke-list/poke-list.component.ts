@@ -11,16 +11,16 @@ import { PokeApiService } from 'src/app/service/poke-api.service';
 })
 export class PokeListComponent {
   private setAllPokemons: any;
-  public getAllPokemons: any;
+  protected getAllPokemons: any;
 
   constructor(private pokeApi: PokeApiService) {
-    this.pokeApi.pegarPokemon.subscribe((res) => {
+    this.pokeApi.pegarPokemon().subscribe((res) => {
       this.setAllPokemons = res.results;
       this.getAllPokemons = this.setAllPokemons;
     });
   }
 
-  public getSearch(value: string) {
+  getSearch(value: string): void {
     const filter = this.setAllPokemons.filter((res: any) => {
       return !res.name.indexOf(value.toLowerCase());
     });

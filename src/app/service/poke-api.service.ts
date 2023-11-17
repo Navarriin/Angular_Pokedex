@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map, tap } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PokeApiService {
-  private url: string = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=151';
+  private url: string = environment.api;
 
   constructor(private http: HttpClient) {}
 
-  get pegarPokemon(): Observable<any> {
+  pegarPokemon(): Observable<any> {
     return this.http.get<any>(this.url).pipe(
       tap((res) => res),
       tap((res) => {
@@ -22,7 +23,7 @@ export class PokeApiService {
       })
     );
   }
-  public apiGetPokemons(url: string): Observable<any> {
+  apiGetPokemons(url: string): Observable<any> {
     return this.http.get<any>(url).pipe(map((res) => res));
   }
 }
