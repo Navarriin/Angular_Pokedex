@@ -13,13 +13,20 @@ export class PokeListComponent {
   private setAllPokemons: any;
   protected getAllPokemons: any;
 
+  protected error: boolean = false;
+
   constructor(private pokeApi: PokeApiService) {}
 
   ngOnInit() {
-    this.pokeApi.pegarPokemon().subscribe((res) => {
-      this.setAllPokemons = res.results;
-      this.getAllPokemons = this.setAllPokemons;
-    });
+    this.pokeApi.pegarPokemon().subscribe(
+      (res) => {
+        this.setAllPokemons = res.results;
+        this.getAllPokemons = this.setAllPokemons;
+      },
+      (error) => {
+        this.error = true;
+      }
+    );
   }
 
   getSearch(value: string): void {

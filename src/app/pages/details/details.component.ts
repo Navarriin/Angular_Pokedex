@@ -15,6 +15,8 @@ export class DetailsComponent {
   private urlName: string = environment.apiName;
 
   public pokemon: any;
+  protected isLoading: boolean = false;
+  protected error: boolean = false;
 
   constructor(
     private activetedRoute: ActivatedRoute,
@@ -30,8 +32,14 @@ export class DetailsComponent {
     const pokemon = this.pokeApi.apiGetPokemons(`${this.url}/${id}`);
     const name = this.pokeApi.apiGetPokemons(`${this.urlName}/${id}`);
 
-    return forkJoin([pokemon, name]).subscribe((res) => {
-      this.pokemon = res;
-    });
+    return forkJoin([pokemon, name]).subscribe(
+      (res) => {
+        this.pokemon = res;
+        this.isLoading = true;
+      },
+      (error) => {
+        this.error = true;
+      }
+    );
   }
 }
