@@ -1,3 +1,5 @@
+// TODAS DO SITE "CSS ANIMATIONS GENERATOR"
+
 // Animaçao de cima para baixo
 .slideInDown {
   -webkit-animation-name: slideInDown;
@@ -96,6 +98,7 @@
 
 // Animaçao de aparecer a imagem cm um delay
 .fadeIn {
+  z-index: 0;
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
   -webkit-animation-duration: 1s;
