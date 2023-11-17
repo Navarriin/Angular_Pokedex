@@ -1,0 +1,8 @@
+@import "../../../config-scss/rem-calc.scss";
+:host {
+  .details {
+    display: flex;
+    justify-content: center;
+    margin-top: rem-calc(20);
+  }
+}
