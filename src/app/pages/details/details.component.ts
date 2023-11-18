@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { forkJoin } from 'rxjs';
 import { PokeApiService } from 'src/app/service/poke-api.service';
-import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-details',
@@ -11,8 +10,8 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./details.component.scss'],
 })
 export class DetailsComponent {
-  private url: string = environment.apiComId;
-  private urlName: string = environment.apiName;
+  private url: string = 'https://pokeapi.co/api/v2/pokemon';
+  private urlName: string = 'https://pokeapi.co/api/v2/pokemon-species';
 
   public pokemon: any;
   protected isLoading: boolean = false;
