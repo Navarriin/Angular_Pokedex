@@ -10,13 +10,18 @@ import { PokeApiService } from 'src/app/service/poke-api.service';
   ],
 })
 export class PokeListComponent {
+  private url: string = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=20';
   private setAllPokemons: any;
   protected getAllPokemons: any;
 
   constructor(private pokeApi: PokeApiService) {}
 
-  ngOnInit() {
-    this.pokeApi.pegarPokemon().subscribe((res) => {
+  ngOnInit(): void {
+    this.loadingPokemons();
+  }
+
+  loadingPokemons(): void {
+    this.pokeApi.loadingPage(0).subscribe((res) => {
       this.setAllPokemons = res.results;
       this.getAllPokemons = this.setAllPokemons;
     });
@@ -27,5 +32,10 @@ export class PokeListComponent {
       return !res.name.indexOf(value.toLowerCase());
     });
     this.getAllPokemons = filter;
+  }
+
+  async loading(valor: number) {
+    this.pokeApi.loadingPage(valor);
+    this.loadingPokemons();
   }
 }
