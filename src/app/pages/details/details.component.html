@@ -15,7 +15,7 @@
 
                     <ol>
                         <li *ngFor="let value of pokemon[0].stats">
-                            {{ value.stat.name }}
+                            {{ formatString(value.stat.name) }}
 
                             <strong>
                                 {{ value.base_stat }}

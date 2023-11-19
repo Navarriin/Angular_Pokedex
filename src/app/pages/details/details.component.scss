@@ -75,8 +75,13 @@
           li {
             display: flex;
             justify-content: space-between;
+            margin-bottom: rem-calc(5);
+            font-style: italic;
+
+            border-bottom: 1px dashed gray;
             font-size: rem-calc(18);
             line-height: 130%;
+            text-transform: capitalize;
 
             strong {
               font-weight: bold;

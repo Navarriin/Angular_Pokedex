@@ -31,14 +31,13 @@ export class DetailsComponent {
     const pokemon = this.pokeApi.apiGetPokemons(`${this.url}/${id}`);
     const name = this.pokeApi.apiGetPokemons(`${this.urlName}/${id}`);
 
-    return forkJoin([pokemon, name]).subscribe(
-      (res) => {
-        this.pokemon = res;
-        this.isLoading = true;
-      },
-      (_error) => {
-        this.error = true;
-      }
-    );
+    return forkJoin([pokemon, name]).subscribe((res) => {
+      this.pokemon = res;
+      this.isLoading = true;
+    });
+  }
+
+  formatString(s: string): string {
+    return s.charAt(0).toUpperCase() + s.slice(1);
   }
 }
