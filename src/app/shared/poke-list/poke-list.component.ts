@@ -10,7 +10,6 @@ import { PokeApiService } from 'src/app/service/poke-api.service';
   ],
 })
 export class PokeListComponent {
-  private url: string = 'https://pokeapi.co/api/v2/pokemon?offset=0&limit=20';
   private setAllPokemons: any;
   protected getAllPokemons: any;
 

@@ -7,7 +7,7 @@ import { Observable, map, tap } from 'rxjs';
 })
 export class PokeApiService {
   private url: string = 'https://pokeapi.co/api/v2/pokemon';
-  private off: string = '0';
+
   private limit: string = '10';
 
   constructor(private http: HttpClient) {}
@@ -26,15 +26,11 @@ export class PokeApiService {
   }
 
   loadingPage(valor: number): Observable<any> {
-    const off: number = parseInt(this.off);
-    const offf: number = off + valor;
-    this.off = offf.toString();
-
     const limit: number = parseInt(this.limit);
     const limitt: number = limit + valor;
     this.limit = limitt.toString();
 
-    let url = `${this.url}?offset=${offf}&limit=${limitt}`;
+    let url = `${this.url}?offset=0&limit=${limitt}`;
 
     return this.pegarPokemon(url);
   }
