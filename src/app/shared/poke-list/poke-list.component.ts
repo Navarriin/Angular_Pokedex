@@ -16,11 +16,7 @@ export class PokeListComponent {
   constructor(private pokeApi: PokeApiService) {}
 
   ngOnInit(): void {
-    this.loadingPokemons();
-  }
-
-  loadingPokemons(): void {
-    this.pokeApi.loadingPage(0).subscribe((res) => {
+    this.pokeApi.pegarPokemon().subscribe((res) => {
       this.setAllPokemons = res.results;
       this.getAllPokemons = this.setAllPokemons;
     });
@@ -31,10 +27,5 @@ export class PokeListComponent {
       return !res.name.indexOf(value.toLowerCase());
     });
     this.getAllPokemons = filter;
-  }
-
-  async loading(valor: number) {
-    this.pokeApi.loadingPage(valor);
-    this.loadingPokemons();
   }
 }
