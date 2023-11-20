@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { PokeApiService } from 'src/app/service/poke-api.service';
 
 @Component({

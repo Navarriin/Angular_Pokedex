@@ -37,7 +37,7 @@ export class DetailsComponent {
     });
   }
 
-  formatString(s: string): string {
-    return s.charAt(0).toUpperCase() + s.slice(1);
+  formatString(str: string): string {
+    return str.charAt(0).toUpperCase() + str.slice(1);
   }
 }

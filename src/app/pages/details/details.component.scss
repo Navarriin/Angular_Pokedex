@@ -1,6 +1,8 @@
 @import "../../../config-scss/rem-calc.scss";
 :host {
   main {
+    overflow: hidden;
+
     max-width: 35%;
     margin: auto;
     margin-top: rem-calc(40);
